@@ -4,10 +4,11 @@ use_frameworks!
 inhibit_all_warnings!
 
 def common_pods
-  # Common pods
+  pod 'SwiftDate', '~> 4'
 end
 
 target 'WeatherWithViperPattern' do
+  common_pods
   pod 'Reachability', '~> 3'
   pod 'TPKeyboardAvoiding', '~> 1'
   pod 'SDWebImage', :git => 'https://github.com/rs/SDWebImage.git', :tag => '4.0.0'
@@ -20,15 +21,13 @@ target 'WeatherWithViperPattern' do
   pod 'Hex', '~> 5'
   pod 'SnapKit', '~> 3'
   pod 'KMPlaceholderTextView', '~> 1.3.0'
-  pod 'SwiftDate', '~> 4'
   pod 'lottie-ios', '~> 1.5'
 end
 
 target 'WeatherWithViperPatternTests' do
   common_pods
-  pod 
 end
 
 target 'WeatherWithViperPatternUITests' do
-    common_pods
+  common_pods
 end

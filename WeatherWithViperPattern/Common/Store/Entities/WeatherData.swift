@@ -9,31 +9,35 @@
 import Foundation
 import CoreData
 
-final class WeatherData: NSManagedObject {
-    @NSManaged var currentDescription: String
-    @NSManaged var currentTemperature: Float
-    @NSManaged var date: Date
-    @NSManaged var icon: String
-    @NSManaged var maxTemperature: Float
-    @NSManaged var minTemperature: Float
-}
-
 final class WeatherCoreData: LocalData {
     
-    func fetchWeathersWithPredicate(_ predicate: NSPredicate, sortDescriptors: [NSSortDescriptor], completionBlock: (([WeatherData]) -> Void)!) {
+    func fetchWeathersWithPredicate(_ predicate: NSPredicate, sortDescriptors: [NSSortDescriptor], completionBlock: (([Weather]) -> Void)!) {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult>  = NSFetchRequest(entityName: "Weather")
         fetchRequest.predicate = predicate
         fetchRequest.sortDescriptors = sortDescriptors
         
         managedObjectContext.perform {
             let queryResults = try? self.managedObjectContext.fetch(fetchRequest)
-            let managedResults = queryResults! as! [WeatherData]
+            let managedResults = queryResults! as! [Weather]
             completionBlock(managedResults)
         }
     }
     
-    func newWeather() -> WeatherData {
-        let newWeather = NSEntityDescription.insertNewObject(forEntityName: "Weather", into: managedObjectContext) as! WeatherData
+    func newWeather() -> Weather {
+        let newWeather = NSEntityDescription.insertNewObject(forEntityName: "Weather", into: managedObjectContext) as! Weather
+        
+        return newWeather
+    }
+    
+    func newWeather(from entity: WeatherEntity) -> Weather {
+        let newWeather = self.newWeather()
+        
+        newWeather.currentDescription = entity.currentDescription
+        newWeather.currentTemperature = entity.currentTemperature
+        newWeather.date = entity.date as NSDate? ?? NSDate()
+        newWeather.icon = entity.icon
+        newWeather.maxTemperature = entity.maxTemperature
+        newWeather.minTemperature = entity.minTemperature
         
         return newWeather
     }
