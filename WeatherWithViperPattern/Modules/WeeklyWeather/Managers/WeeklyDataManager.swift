@@ -8,11 +8,26 @@
 
 import Foundation
 
-class WeeklyDataManager : NSObject {
+protocol WeeklyDataApiProtocol {
+    func weeklyWeather(dayCount: Int, cityId: Int?, completion: ((ForecastResponse?) -> Void)!)
+}
+
+protocol WeeklyDataLocalProtocol {
+    func weeklyWeather(from firstDate: Date, completion: (([WeatherEntity]) -> Void)!)
+}
+
+class WeeklyDataManager : NSObject, WeeklyDataApiProtocol, WeeklyDataLocalProtocol {
     var localData : WeatherCoreData?
     
-    // Fetch weekly weather from specific date
-    func weeklyWeathers(from firstDate: Date, completion: (([WeatherEntity]) -> Void)!) {
+    // Fetch weekly weather from API
+    func weeklyWeather(dayCount: Int, cityId: Int?, completion: ((ForecastResponse?) -> Void)!) {
+        ForecastService.get(dayCount: dayCount, cityId: cityId) { (response) in
+            completion(response)
+        }
+    }
+    
+    // Fetch weekly weather from specific date from local
+    func weeklyWeather(from firstDate: Date, completion: (([WeatherEntity]) -> Void)!) {
 
         let lastDate = firstDate.addWeek()
         
@@ -21,7 +36,7 @@ class WeeklyDataManager : NSObject {
         
         if let db = localData {
             db.fetchWeathersWithPredicate(predicate, sortDescriptors: sortDescriptors, completionBlock: { weatherDatas in
-                let weathers = self.fetchFromLocalData(rows: weatherDatas)
+                let weathers = self.fetchFrom(rows: weatherDatas)
                 completion(weathers)
             })
         } else {
@@ -29,7 +44,24 @@ class WeeklyDataManager : NSObject {
         }
     }
     
-    private func fetchFromLocalData(rows: [Weather]) -> [WeatherEntity] {
+    // Save forecast response to CoreData
+    func saveWeather(fromForecast forecast: ForecastResponse) {
+        // TODO City
+        
+        // TODO Wind
+        
+        let weatherData = WeatherCoreData()
+        for weather in forecast.weathers {
+            let data = weatherData.newWeather(from: weather)
+            do {
+                try data.managedObjectContext?.save()
+            } catch let error {
+                print("An error occured while saving weather data. Error details:\n\(error)")
+            }
+        }
+    }
+    
+    private func fetchFrom(rows: [Weather]) -> [WeatherEntity] {
         var weathers : [WeatherEntity] = []
         
         for row in rows {

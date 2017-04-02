@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import SwiftDate
 @testable import WeatherWithViperPattern
 
 class WeatherTests: XCTestCase {
@@ -46,9 +47,57 @@ class WeatherTests: XCTestCase {
         
     }
     
-    func testFetchData() {
-        dataManager.weeklyWeathers(from: Date()) { (weathers) in
-            XCTAssertEqual(weathers.count, 0)
+    func testFetchFromCoreData() {
+        
+        let dataExpectation = expectation(description: "Fetching from API")
+        var data: [WeatherEntity]?
+        
+        dataManager.weeklyWeather(from: Date()) { (weathers) in
+            data = weathers
+            dataExpectation.fulfill()
+        }
+        
+        self.waitForExpectations(timeout: 3) { (error) in
+            XCTAssert(error == nil)
+            XCTAssert(data != nil)
+            XCTAssertEqual(data?.count, 0)
         }
     }
+    
+    func testFetchFromApi() {
+
+        let dataExpectation = expectation(description: "Fetching from API")
+        var data: ForecastResponse?
+        
+        dataManager.weeklyWeather(dayCount: 7, cityId: 738329) { (response) in
+            data = response
+            dataExpectation.fulfill()
+        }
+        
+        self.waitForExpectations(timeout: 3) { (error) in
+            XCTAssert(error == nil)
+            XCTAssert(data != nil)
+            XCTAssert(data?.weathers.count == 7)
+        }
+    }
+    
+    func testFailFetchApi() {
+        let dataExpectation = expectation(description: "Fetching from API")
+        var data: ForecastResponse?
+        
+        dataManager.weeklyWeather(dayCount: 0, cityId: 0) { (response) in
+            data = response
+            dataExpectation.fulfill()
+        }
+        
+        self.waitForExpectations(timeout: 3) { (error) in
+            XCTAssert(error == nil)
+            XCTAssert(data != nil)
+            XCTAssert(data?.weathers.count == 0)
+        }
+    }
+    
+    //func testSaveResponse() {
+        //let response = ForecastResponse(response: <#T##HTTPURLResponse#>, representation: <#T##AnyObject#>)
+    //}
 }

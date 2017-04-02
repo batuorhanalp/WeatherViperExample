@@ -22,6 +22,7 @@ target 'WeatherWithViperPattern' do
   pod 'SnapKit', '~> 3'
   pod 'KMPlaceholderTextView', '~> 1.3.0'
   pod 'lottie-ios', '~> 1.5'
+  pod 'EVReflection'
 end
 
 target 'WeatherWithViperPatternTests' do

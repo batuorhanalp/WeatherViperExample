@@ -13,9 +13,6 @@
 		4795B7891E91029700A3F477 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4795B7851E91029700A3F477 /* LaunchScreen.storyboard */; };
 		4795B78A1E91029700A3F477 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4795B7871E91029700A3F477 /* Main.storyboard */; };
 		4795B78D1E91056A00A3F477 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4795B78C1E91056A00A3F477 /* R.generated.swift */; };
-		4795B7951E910A5900A3F477 /* WeeklyWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4795B7941E910A5900A3F477 /* WeeklyWeatherViewController.swift */; };
-		4795B7971E910A6F00A3F477 /* WeeklyWeatherPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4795B7961E910A6F00A3F477 /* WeeklyWeatherPresenter.swift */; };
-		4795B7991E910A8C00A3F477 /* WeeklyWeatherInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4795B7981E910A8C00A3F477 /* WeeklyWeatherInteractor.swift */; };
 		4795B79B1E910A9F00A3F477 /* WeeklyWeatherAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4795B79A1E910A9F00A3F477 /* WeeklyWeatherAssembly.swift */; };
 		4795B79E1E910B1D00A3F477 /* WeeklyWeatherRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4795B79D1E910B1D00A3F477 /* WeeklyWeatherRouting.swift */; };
 		4795B7AD1E910E8700A3F477 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4795B7A61E910E8700A3F477 /* BaseViewController.swift */; };
@@ -33,6 +30,12 @@
 		4795B7CC1E91240400A3F477 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4795B7CB1E91240400A3F477 /* Date.swift */; };
 		4795B7CE1E91242600A3F477 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4795B7CD1E91242600A3F477 /* String.swift */; };
 		4795B7D11E91249300A3F477 /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4795B7D01E91249300A3F477 /* DateTests.swift */; };
+		4795B7DF1E914FC400A3F477 /* ForecastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4795B7DE1E914FC400A3F477 /* ForecastService.swift */; };
+		4795B7E11E914FF600A3F477 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4795B7E01E914FF600A3F477 /* Router.swift */; };
+		4795B7E31E9151A100A3F477 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4795B7E21E9151A100A3F477 /* Alamofire.swift */; };
+		4795B7E61E91916C00A3F477 /* WeeklyInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4795B7E51E91916C00A3F477 /* WeeklyInteractor.swift */; };
+		4795B7EB1E91943A00A3F477 /* WeeklyWeatherPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4795B7EA1E91943A00A3F477 /* WeeklyWeatherPresenter.swift */; };
+		4795B7EE1E91949100A3F477 /* WeeklyWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4795B7ED1E91949100A3F477 /* WeeklyWeatherViewController.swift */; };
 		9AA45F308F908637BD781C31 /* Pods_WeatherWithViperPatternTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2D6DE59BEF300472DF8338 /* Pods_WeatherWithViperPatternTests.framework */; };
 		ACB6B7321919B834B87CF7A9 /* Pods_WeatherWithViperPatternUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F05AEA8CD224E9F0E249A857 /* Pods_WeatherWithViperPatternUITests.framework */; };
 		D11A4694957B9A1CAB7F509E /* Pods_WeatherWithViperPattern.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC64042A92A7BBFFAB58DD24 /* Pods_WeatherWithViperPattern.framework */; };
@@ -70,9 +73,6 @@
 		4795B7861E91029700A3F477 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = StoryBoards/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4795B7881E91029700A3F477 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = StoryBoards/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4795B78C1E91056A00A3F477 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
-		4795B7941E910A5900A3F477 /* WeeklyWeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeeklyWeatherViewController.swift; path = WeeklyWeather/WeeklyWeatherViewController.swift; sourceTree = "<group>"; };
-		4795B7961E910A6F00A3F477 /* WeeklyWeatherPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeeklyWeatherPresenter.swift; path = WeeklyWeather/WeeklyWeatherPresenter.swift; sourceTree = "<group>"; };
-		4795B7981E910A8C00A3F477 /* WeeklyWeatherInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeeklyWeatherInteractor.swift; path = WeeklyWeather/WeeklyWeatherInteractor.swift; sourceTree = "<group>"; };
 		4795B79A1E910A9F00A3F477 /* WeeklyWeatherAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeeklyWeatherAssembly.swift; path = WeeklyWeather/WeeklyWeatherAssembly.swift; sourceTree = "<group>"; };
 		4795B79D1E910B1D00A3F477 /* WeeklyWeatherRouting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeeklyWeatherRouting.swift; path = WeeklyWeather/WeeklyWeatherRouting.swift; sourceTree = "<group>"; };
 		4795B7A61E910E8700A3F477 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +90,12 @@
 		4795B7CB1E91240400A3F477 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Date.swift; path = Common/Extensions/Date.swift; sourceTree = "<group>"; };
 		4795B7CD1E91242600A3F477 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = String.swift; path = Common/Extensions/String.swift; sourceTree = "<group>"; };
 		4795B7D01E91249300A3F477 /* DateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateTests.swift; path = Extensions/DateTests.swift; sourceTree = "<group>"; };
+		4795B7DE1E914FC400A3F477 /* ForecastService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastService.swift; sourceTree = "<group>"; };
+		4795B7E01E914FF600A3F477 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		4795B7E21E9151A100A3F477 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Common/Extensions/Alamofire.swift; sourceTree = "<group>"; };
+		4795B7E51E91916C00A3F477 /* WeeklyInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeeklyInteractor.swift; path = WeeklyWeather/Interactors/WeeklyInteractor.swift; sourceTree = "<group>"; };
+		4795B7EA1E91943A00A3F477 /* WeeklyWeatherPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeeklyWeatherPresenter.swift; path = WeeklyWeather/Presenters/WeeklyWeatherPresenter.swift; sourceTree = "<group>"; };
+		4795B7ED1E91949100A3F477 /* WeeklyWeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeeklyWeatherViewController.swift; path = WeeklyWeather/View/WeeklyWeatherViewController.swift; sourceTree = "<group>"; };
 		49FBC912341D6E1797D4D502 /* Pods-WeatherWithViperPatternUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherWithViperPatternUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherWithViperPatternUITests/Pods-WeatherWithViperPatternUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6386155D362564929C13A71F /* Pods-WeatherWithViperPattern.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherWithViperPattern.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherWithViperPattern/Pods-WeatherWithViperPattern.release.xcconfig"; sourceTree = "<group>"; };
 		655272B53F73F103531FB555 /* Pods-WeatherWithViperPatternTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherWithViperPatternTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherWithViperPatternTests/Pods-WeatherWithViperPatternTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -226,12 +232,12 @@
 		4795B7921E91067200A3F477 /* Weekly Weather */ = {
 			isa = PBXGroup;
 			children = (
-				4795B7C11E911BF700A3F477 /* Manager */,
-				4795B7941E910A5900A3F477 /* WeeklyWeatherViewController.swift */,
-				4795B7961E910A6F00A3F477 /* WeeklyWeatherPresenter.swift */,
-				4795B7981E910A8C00A3F477 /* WeeklyWeatherInteractor.swift */,
 				4795B79A1E910A9F00A3F477 /* WeeklyWeatherAssembly.swift */,
 				4795B79D1E910B1D00A3F477 /* WeeklyWeatherRouting.swift */,
+				4795B7EC1E91947500A3F477 /* View */,
+				4795B7E91E91940800A3F477 /* Presenter */,
+				4795B7E41E91914300A3F477 /* Interactor */,
+				4795B7C11E911BF700A3F477 /* Manager */,
 			);
 			name = "Weekly Weather";
 			sourceTree = "<group>";
@@ -278,6 +284,8 @@
 		4795B7A81E910E8700A3F477 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				4795B7E01E914FF600A3F477 /* Router.swift */,
+				4795B7DE1E914FC400A3F477 /* ForecastService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -347,6 +355,7 @@
 			children = (
 				4795B7CB1E91240400A3F477 /* Date.swift */,
 				4795B7CD1E91242600A3F477 /* String.swift */,
+				4795B7E21E9151A100A3F477 /* Alamofire.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -357,6 +366,30 @@
 				4795B7D01E91249300A3F477 /* DateTests.swift */,
 			);
 			name = Extension;
+			sourceTree = "<group>";
+		};
+		4795B7E41E91914300A3F477 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				4795B7E51E91916C00A3F477 /* WeeklyInteractor.swift */,
+			);
+			name = Interactor;
+			sourceTree = "<group>";
+		};
+		4795B7E91E91940800A3F477 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4795B7EA1E91943A00A3F477 /* WeeklyWeatherPresenter.swift */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		4795B7EC1E91947500A3F477 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4795B7ED1E91949100A3F477 /* WeeklyWeatherViewController.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		64EEB34C7BDED4D07D66B77E /* Frameworks */ = {
@@ -668,19 +701,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4795B7971E910A6F00A3F477 /* WeeklyWeatherPresenter.swift in Sources */,
+				4795B7E31E9151A100A3F477 /* Alamofire.swift in Sources */,
+				4795B7E11E914FF600A3F477 /* Router.swift in Sources */,
 				4795B7C31E911C3000A3F477 /* WeeklyDataManager.swift in Sources */,
 				4795B7CE1E91242600A3F477 /* String.swift in Sources */,
+				4795B7E61E91916C00A3F477 /* WeeklyInteractor.swift in Sources */,
 				4795B7B41E91176500A3F477 /* CityData.swift in Sources */,
 				4795B78D1E91056A00A3F477 /* R.generated.swift in Sources */,
+				4795B7DF1E914FC400A3F477 /* ForecastService.swift in Sources */,
 				4795B7AE1E910E8700A3F477 /* WeatherWithViperPattern.xcdatamodeld in Sources */,
-				4795B7991E910A8C00A3F477 /* WeeklyWeatherInteractor.swift in Sources */,
+				4795B7EB1E91943A00A3F477 /* WeeklyWeatherPresenter.swift in Sources */,
 				4795B7B01E910F1F00A3F477 /* LocalData.swift in Sources */,
 				4795B7BC1E91195F00A3F477 /* WeatherEntity.swift in Sources */,
 				4795B7C01E91198C00A3F477 /* WindEntity.swift in Sources */,
-				4795B7951E910A5900A3F477 /* WeeklyWeatherViewController.swift in Sources */,
 				4795B7B21E910F9300A3F477 /* WeatherData.swift in Sources */,
 				4795B7811E91020300A3F477 /* AppDelegate.swift in Sources */,
+				4795B7EE1E91949100A3F477 /* WeeklyWeatherViewController.swift in Sources */,
 				4795B7AD1E910E8700A3F477 /* BaseViewController.swift in Sources */,
 				4795B7BE1E91197900A3F477 /* CityEntity.swift in Sources */,
 				4795B7B61E91177000A3F477 /* WindData.swift in Sources */,

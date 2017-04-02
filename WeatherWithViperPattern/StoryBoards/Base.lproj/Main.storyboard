@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JTd-5h-edu">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,38 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
-        <scene sceneID="1bg-ba-KF2">
-            <objects>
-                <tableViewController id="hIe-Tp-yXl" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="6Mi-ak-jei">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="THi-9R-re8">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="THi-9R-re8" id="ifG-UR-p5H">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="hIe-Tp-yXl" id="pyT-Zg-nOc"/>
-                            <outlet property="delegate" destination="hIe-Tp-yXl" id="AY4-KX-aPI"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="hZK-Ep-5QQ"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
-                    </userDefinedRuntimeAttributes>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="I6V-EP-6W9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="114" y="72"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="q7r-1G-dNR">
             <objects>
@@ -50,12 +18,31 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="hIe-Tp-yXl" kind="relationship" relationship="rootViewController" id="YUO-Iv-QpJ"/>
+                        <segue destination="PED-8R-rzh" kind="relationship" relationship="rootViewController" id="7P1-bq-qcb"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PQM-rD-RL5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-695" y="72"/>
+        </scene>
+        <!--Weekly Weather View Controller-->
+        <scene sceneID="hWZ-Ev-Bdh">
+            <objects>
+                <viewController id="PED-8R-rzh" customClass="WeeklyWeatherViewController" customModule="WeatherWithViperPattern" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1Ts-CV-yei"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ivp-EJ-oTK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bMy-dd-c8a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Agi-gv-3vV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZUj-Nn-s0K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="46" y="72"/>
         </scene>
     </scenes>
 </document>

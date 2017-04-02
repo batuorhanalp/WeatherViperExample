@@ -22,8 +22,8 @@
         <relationship name="weather" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Weather" inverseName="wind" inverseEntity="Weather" syncable="YES"/>
     </entity>
     <elements>
+        <element name="City" positionX="189" positionY="-18" width="128" height="103"/>
         <element name="Weather" positionX="-63" positionY="-18" width="128" height="163"/>
         <element name="Wind" positionX="-252" positionY="-27" width="128" height="88"/>
-        <element name="City" positionX="189" positionY="-18" width="128" height="103"/>
     </elements>
 </model>
