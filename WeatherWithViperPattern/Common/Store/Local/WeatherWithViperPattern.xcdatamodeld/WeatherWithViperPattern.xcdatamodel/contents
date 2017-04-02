@@ -4,6 +4,7 @@
         <attribute name="countryCode" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="weathers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Weather" inverseName="city" inverseEntity="Weather" syncable="YES"/>
     </entity>
     <entity name="Weather" representedClassName="Weather" syncable="YES" codeGenerationType="class">
         <attribute name="currentDescription" optional="YES" attributeType="String" syncable="YES"/>
@@ -12,14 +13,17 @@
         <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="maxTemperature" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="minTemperature" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="city" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="City" inverseName="weathers" inverseEntity="City" syncable="YES"/>
+        <relationship name="wind" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Wind" inverseName="weather" inverseEntity="Wind" syncable="YES"/>
     </entity>
     <entity name="Wind" representedClassName="Wind" syncable="YES" codeGenerationType="class">
         <attribute name="degree" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="speed" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="weather" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Weather" inverseName="wind" inverseEntity="Weather" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Weather" positionX="-63" positionY="-18" width="128" height="135"/>
-        <element name="Wind" positionX="-54" positionY="18" width="128" height="75"/>
-        <element name="City" positionX="-36" positionY="45" width="128" height="90"/>
+        <element name="Weather" positionX="-63" positionY="-18" width="128" height="163"/>
+        <element name="Wind" positionX="-252" positionY="-27" width="128" height="88"/>
+        <element name="City" positionX="189" positionY="-18" width="128" height="103"/>
     </elements>
 </model>
