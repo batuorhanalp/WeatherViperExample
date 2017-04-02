@@ -25,7 +25,8 @@ target 'WeatherWithViperPattern' do
 end
 
 target 'WeatherWithViperPatternTests' do
-    common_pods
+  common_pods
+  pod 
 end
 
 target 'WeatherWithViperPatternUITests' do
